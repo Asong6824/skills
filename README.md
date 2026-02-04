@@ -16,6 +16,7 @@ ln -s ~/skills/skills ~/.agent/skills
 | 技能 | 描述 |
 |-----|------|
 | [travel-writing](skills/travel-writing/SKILL.md) | 亚兰·布斯风格游记写作 |
+| [skill-manager](skills/skill-manager/SKILL.md) | 创建和管理 Skills/Workflows |
 
 ---
 
@@ -24,6 +25,7 @@ ln -s ~/skills/skills ~/.agent/skills
 | 工作流 | 描述 |
 |-------|------|
 | [writing](workflows/writing.md) | 游记写作快速入口 |
+| [skill-manager](workflows/skill-manager.md) | 创建 Skill/Workflow 并同步 GitHub |
 
 ---
 
