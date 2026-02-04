@@ -1,29 +1,41 @@
-# Antigravity Skills
+# Antigravity Skills & Workflows
 
-This repository contains custom skills for Antigravity AI assistant.
+个人 Antigravity 技能和工作流管理仓库。
 
-## Structure
+## 🔗 安装
 
-Each skill is organized as a folder containing:
-
-- **SKILL.md** (required): Main instruction file with YAML frontmatter and detailed markdown instructions
-- **scripts/** (optional): Helper scripts and utilities
-- **examples/** (optional): Reference implementations and usage patterns
-- **resources/** (optional): Additional files, templates, or assets
-
-## SKILL.md Format
-
-```markdown
----
-name: skill-name
-description: Brief description of what this skill does
----
-
-# Skill Title
-
-Detailed instructions for the skill...
+```bash
+git clone https://github.com/Asong6824/skills.git ~/skills
+ln -s ~/skills/skills ~/.agent/skills
 ```
 
-## Usage
+---
 
-Skills are automatically detected by Antigravity when placed in this directory. Reference them in your prompts or they may be suggested based on context.
+## 📦 Skills
+
+| 技能 | 描述 |
+|-----|------|
+| [travel-writing](skills/travel-writing/SKILL.md) | 亚兰·布斯风格游记写作 |
+
+---
+
+## 📋 Workflows
+
+| 工作流 | 描述 |
+|-------|------|
+| [writing](workflows/writing.md) | 游记写作快速入口 |
+
+---
+
+## 目录结构
+
+```
+skills/
+├── skills/                  ← Antigravity 技能
+│   └── travel-writing/
+│       ├── SKILL.md
+│       ├── rules/
+│       └── strategies/
+└── workflows/               ← 工作流模板
+    └── writing.md
+```
