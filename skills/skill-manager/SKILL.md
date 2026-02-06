@@ -36,47 +36,42 @@ metadata:
 询问用户：
 
 1. 技能名称（小写，用连字符连接，如 `data-analysis`）
-2. 技能描述（一句话说明用途）
-3. 是否需要子目录（rules/, strategies/, examples/ 等）
+2. 技能描述（一句话说明用途，用于触发）
 
-### Step 2: 创建目录结构
+### Step 2: 使用自动化脚本创建
+
+利用 `skill-creator` 提供的脚本快速生成标准化结构：
 
 ```bash
-mkdir -p ~/skills/skills/<skill-name>
+# 语法：script_path <skill-name> --path <target-path>
+python3 ~/.gemini/antigravity/skills/skill-creator/scripts/init_skill.py <skill-name> --path ~/skills/skills
 ```
 
-### Step 3: 创建 SKILL.md
+该脚本会自动创建：
 
-必须包含 YAML frontmatter：
+- 目录结构
+- 标准化的 `SKILL.md` (包含 YAML frontmatter 和模板)
+- `scripts/`, `references/`, `assets/` 及其示例文件
 
-```markdown
----
-name: <skill-name>
-description: <brief description>
-license: MIT
-metadata:
-  author: hanruochong
-  version: "1.0.0"
----
+### Step 3: 定制内容
 
-# <Skill Title>
+1. 编辑生成的 `SKILL.md`：
+   - 填入具体的触发条件和规则
+   - 在 `metadata` 中补充作者信息（author: hanruochong）
+2. 清理不需要的资源：
+   - 删除不需要的示例文件（如不需要脚本则删除 `scripts/`）
 
-## 触发条件
-描述何时激活此技能...
+### Step 4: 验证（可选）
 
-## 规则
-具体的执行规则...
+使用校验脚本检查格式：
 
-## 示例
-使用示例...
+```bash
+python3 ~/.gemini/antigravity/skills/skill-creator/scripts/quick_validate.py ~/skills/skills/<skill-name>
 ```
 
-### Step 4: 创建子文件（可选）
+```
 
-- `rules/` - 规则文件
-- `strategies/` - 策略文件
-- `examples/` - 示例文件
-- `scripts/` - 辅助脚本
+
 
 ---
 
