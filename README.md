@@ -19,6 +19,7 @@ ln -s ~/skills/skills ~/.agent/skills
 | [skill-manager](skills/skill-manager/SKILL.md) | 创建和管理 Skills/Workflows |
 | [style-analysis](skills/style-analysis/SKILL.md) | 散文作家写作风格分析 (名词分类/拓扑均质/语调校准) |
 | [tool-bilibili-downloader](skills/tool-bilibili-downloader/SKILL.md) | B站视频音频提取与下载 (基于 yutto) |
+| [remotion-best-practices](skills/remotion-best-practices/SKILL.md) | Remotion 视频创建最佳实践参考指南 |
 
 ---
 
@@ -29,6 +30,7 @@ ln -s ~/skills/skills ~/.agent/skills
 | [writing](workflows/writing.md) | 游记写作快速入口 |
 | [skill-manager](workflows/skill-manager.md) | 创建 Skill/Workflow 并同步 GitHub |
 | [style-analysis](workflows/style-analysis.md) | 作家写作风格分析工作流 |
+| [remotion-guide](workflows/remotion-guide.md) | Remotion 视频开发参考与查询 |
 | [download-bilibili-audio](workflows/download-bilibili-audio.md) | B站音频下载至 MacWhisper 待转录目录 |
 | [import-local-to-notebooklm](workflows/import-local-to-notebooklm.md) | 导入本地文件 (PDF/Office) 到 NotebookLM |
 
