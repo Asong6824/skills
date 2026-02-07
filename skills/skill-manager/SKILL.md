@@ -1,152 +1,101 @@
 ---
 name: skill-manager
 description: Meta-skill for creating, editing, and managing Antigravity skills and workflows. Use when asked to create new skills, update existing ones, or sync to GitHub.
-license: MIT
 metadata:
   author: hanruochong
-  version: "1.0.0"
+  version: "1.0.1"
   repo: "https://github.com/Asong6824/skills"
 ---
 
 # Skill Manager
 
-帮助创建、编辑和管理 Antigravity Skills 和 Workflows 的元技能。
+## 什么时候使用
+
+当用户要求创建、更新或管理 Skill 时使用。**注意：所有的 Skill 更新必须同步更新 GitHub 仓库。**
 
 ---
 
-## ⚠️ 关键规则
+## 🚀 核心工作流：创建并发布 Skill (Create & Publish)
 
-### 1. 文件位置
+这是一个**完整的、原子的**操作流程。请务必**按顺序执行完所有步骤**，不要中途停止。
 
-| 类型 | 位置 |
-|-----|------|
-| Skills | `~/skills/skills/<skill-name>/` |
-| Workflows | `~/skills/workflows/<workflow-name>.md` |
+### Step 1: 自动化初始化 (Init)
 
-### 2. 符号链接
-
-`~/.agent/skills` 是指向 `~/skills/skills` 的符号链接，**不要直接修改 `~/.agent/skills` 目录**。
-
----
-
-## Skill 创建流程
-
-### Step 1: 确定技能范围
-
-询问用户：
-
-1. 技能名称（小写，用连字符连接，如 `data-analysis`）
-2. 技能描述（一句话说明用途，用于触发）
-
-### Step 2: 使用自动化脚本创建
-
-利用 `skill-creator` 提供的脚本快速生成标准化结构：
+利用脚本快速生成 Skill 目录结构：
 
 ```bash
-# 语法：script_path <skill-name> --path <target-path>
+# 自动生成目录、SKILL.md、scripts/ 等
 python3 ~/.gemini/antigravity/skills/skill-creator/scripts/init_skill.py <skill-name> --path ~/skills/skills
 ```
 
-该脚本会自动创建：
+### Step 2: 定制与开发 (Develop)
 
-- 目录结构
-- 标准化的 `SKILL.md` (包含 YAML frontmatter 和模板)
-- `scripts/`, `references/`, `assets/` 及其示例文件
+1. **编辑 SKILL.md**：填入具体的触发条件、规则和示例。确保 `metadata` 包含作者信息。
+2. **开发脚本**：在 `scripts/` 目录下添加必要的辅助脚本（可选）。
+3. **清理**：删除不需要的示例文件（如 `example.py`, `api_reference.md` 等）。
+4. **验证**：
 
-### Step 3: 定制内容
+    ```bash
+    python3 ~/.gemini/antigravity/skills/skill-creator/scripts/quick_validate.py ~/skills/skills/<skill-name>
+    ```
 
-1. 编辑生成的 `SKILL.md`：
-   - 填入具体的触发条件和规则
-   - 在 `metadata` 中补充作者信息（author: hanruochong）
-2. 清理不需要的资源：
-   - 删除不需要的示例文件（如不需要脚本则删除 `scripts/`）
+### Step 3: 创建 Workflow 文档 (Document)
 
-### Step 4: 验证（可选）
+**必须**为每个 Skill 创建一个对应的 Workflow 文档，以便用户快速查阅：
 
-使用校验脚本检查格式：
+1. 创建文件：`~/skills/workflows/<skill-name>.md`
+2. 写入模板：
 
-```bash
-python3 ~/.gemini/antigravity/skills/skill-creator/scripts/quick_validate.py ~/skills/skills/<skill-name>
-```
+    ```markdown
+    ---
+    description: <简短描述>
+    ---
 
-```
+    # <Skill Name> 工作流
 
+    基于 `<skill-name>` 技能的标准流程。
 
+    ## 技能位置
+    `~/.agent/skills/<skill-name>/SKILL.md`
 
----
+    ## 核心步骤
+    1. ...
+    2. ...
+    ```
 
-## Workflow 创建流程
+### Step 4: 更新索引 (Index)
 
-### Step 1: 确定工作流范围
+编辑 `~/skills/README.md`，在两个表格中分别添加条目：
 
-询问用户：
+1. **Skills 表格**：
+    `| [<skill-name>](skills/<skill-name>/SKILL.md) | <描述> |`
+2. **Workflows 表格**：
+    `| [<skill-name>](workflows/<skill-name>.md) | <描述> |`
 
-1. 工作流名称（小写，如 `deploy`, `review`）
-2. 工作流描述
-3. 具体步骤
+### Step 5: 同步到 GitHub (Sync)
 
-### Step 2: 创建 Workflow 文件
-
-```markdown
----
-description: <工作流描述>
----
-
-# <工作流标题>
-
-## 步骤
-
-1. 第一步
-2. 第二步
-...
-```
-
-位置：`~/skills/workflows/<name>.md`
-
----
-
-## GitHub 同步流程
-
-每次创建或修改 skill/workflow 后，执行：
+**这一步是必须的！**
 
 ```bash
 cd ~/skills
 git add -A
-git status  # 确认变更
-git commit -m "<描述变更内容>"
+git commit -m "feat: add <skill-name> skill and workflow"
 git push origin main
 ```
 
 ---
 
-## 更新 README 索引
+## 🛠 辅助工作流：仅更新 (Update Only)
 
-每次添加新 skill 或 workflow 后，更新 `~/skills/README.md`：
+当只需修改现有 Skill 时：
 
-### Skills 表格
+1. 修改 `~/skills/skills/<skill-name>` 下的文件。
+2. (可选) 更新 `~/skills/workflows/<skill-name>.md`。
+3. **立即同步**：
 
-```markdown
-| 技能 | 描述 |
-|-----|------|
-| [skill-name](skills/skill-name/SKILL.md) | 描述 |
-```
-
-### Workflows 表格
-
-```markdown
-| 工作流 | 描述 |
-|-------|------|
-| [workflow-name](workflows/workflow-name.md) | 描述 |
-```
-
----
-
-## 命令速查
-
-| 操作 | 命令 |
-|-----|------|
-| 列出所有技能 | `ls ~/skills/skills/` |
-| 列出所有工作流 | `ls ~/skills/workflows/` |
-| 查看 git 状态 | `cd ~/skills && git status` |
-| 推送到远程 | `cd ~/skills && git push` |
-| 拉取更新 | `cd ~/skills && git pull` |
+    ```bash
+    cd ~/skills
+    git add -A
+    git commit -m "update: improve <skill-name> logic"
+    git push origin main
+    ```
