@@ -17,6 +17,7 @@ ln -s ~/skills/skills ~/.agent/skills
 |-----|------|
 | [travel-writing](skills/travel-writing/SKILL.md) | 亚兰·布斯风格游记写作 |
 | [skill-manager](skills/skill-manager/SKILL.md) | 创建和管理 Skills/Workflows |
+| [style-analysis](skills/style-analysis/SKILL.md) | 散文作家写作风格分析 (名词分类/拓扑均质/语调校准) |
 
 ---
 
