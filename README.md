@@ -30,6 +30,7 @@ ln -s ~/skills/skills ~/.agent/skills
 | [skill-manager](workflows/skill-manager.md) | 创建 Skill/Workflow 并同步 GitHub |
 | [style-analysis](workflows/style-analysis.md) | 作家写作风格分析工作流 |
 | [download-bilibili-audio](workflows/download-bilibili-audio.md) | B站音频下载至 MacWhisper 待转录目录 |
+| [import-local-to-notebooklm](workflows/import-local-to-notebooklm.md) | 导入本地文件 (PDF/Office) 到 NotebookLM |
 
 ---
 
