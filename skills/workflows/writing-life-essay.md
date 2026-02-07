@@ -8,7 +8,7 @@ Generates life essays in the style of Jugaku Akiko, focusing on material details
 
 ## Skill Location
 
-`~/.agent/skills/life-essay-writing/SKILL.md`
+`~/.agent/skills/writing-life-essay/SKILL.md`
 
 ## Core Steps
 

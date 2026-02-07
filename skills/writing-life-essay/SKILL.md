@@ -1,5 +1,5 @@
 ---
-name: jugaku-life-essay
+name: writing-life-essay
 description: Life essay writing style inspired by Jugaku Akiko (寿岳章子). Focuses on material details, craftsmanship, maintenance memories, and tactile nostalgia.
 license: MIT
 metadata:

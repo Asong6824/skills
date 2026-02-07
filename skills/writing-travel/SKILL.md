@@ -1,5 +1,5 @@
 ---
-name: alan-booth-travel-writing
+name: writing-travel
 description: Travel writing style guide inspired by Alan Booth's "The Roads to Sata". Apply when writing travel narratives, travelogues, or journey descriptions. Focuses on sensory grounding, human warmth, and immersive storytelling without satirical elements.
 license: MIT
 metadata:

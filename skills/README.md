@@ -6,11 +6,12 @@
 |---|---|
 | [skill-manager](skills/skill-manager/SKILL.md) | Meta-skill for managing skills and workflows. |
 | [style-analysis](skills/style-analysis/SKILL.md) | Analyzes writing style of authors. |
-| [travel-writing](skills/travel-writing/SKILL.md) | Travel writing style guide (Alan Booth). |
-| [life-essay-writing](skills/life-essay-writing/SKILL.md) | Life essay writing style (Jugaku Akiko). |
+| [writing-travel](skills/writing-travel/SKILL.md) | Travel writing style guide (Alan Booth). |
+| [writing-life-essay](skills/writing-life-essay/SKILL.md) | Life essay writing style (Jugaku Akiko). |
 
 ## Workflows
 
 | Name | Description |
 |---|---|
-| [life-essay](workflows/life-essay.md) | Life Essay Writing (Jugaku Style) |
+| [writing-life-essay](workflows/writing-life-essay.md) | Life Essay Writing (Jugaku Style) |
+| [writing-travel](workflows/writing-travel.md) | Travel Writing (Alan Booth Style) |
