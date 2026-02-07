@@ -27,6 +27,7 @@ ln -s ~/skills/skills ~/.agent/skills
 |-------|------|
 | [writing](workflows/writing.md) | 游记写作快速入口 |
 | [skill-manager](workflows/skill-manager.md) | 创建 Skill/Workflow 并同步 GitHub |
+| [style-analysis](workflows/style-analysis.md) | 作家写作风格分析工作流 |
 
 ---
 
