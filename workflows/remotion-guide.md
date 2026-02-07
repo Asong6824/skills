@@ -41,3 +41,26 @@ The skill covers the following areas (see `rules/` directory for details):
 - **Audio/Video**: Manipulating media, waveforms
 - **Layout**: CSS, Tailwind, measuring nodes
 - **Data**: Charts, maps, dynamic data
+
+## Generating Code with Best Practices
+
+To ensure generated Remotion code follows best practices, explicitly mention the skill or specific rules in your prompt.
+
+### Example Prompts
+
+**Basic Component**
+> "Create a `HelloWorld` component using `remotion-best-practices` for typography and layout."
+
+**Complex Animation**
+> "Generate a sequence of images using `remotion-best-practices`. Reference the `sequencing.md` and `images.md` rules."
+
+**Performance Optimization**
+> "Refactor this composition to improve rendering speed, applying rules from `remotion-best-practices/rules/performance.md`."
+
+### Agent Instruction
+
+When asking for code, the agent will:
+
+1. Read the relevant rule files from `~/.agent/skills/remotion-best-practices/rules/`.
+2. Apply the patterns (e.g., using `absoluteFill`, `useCurrentFrame`, `spring` animations correctly).
+3. Generate code that adheres to these standards.
