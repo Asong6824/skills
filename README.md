@@ -20,6 +20,9 @@ ln -s ~/skills/skills ~/.agent/skills
 | [style-analysis](skills/style-analysis/SKILL.md) | 散文作家写作风格分析 (名词分类/拓扑均质/语调校准) |
 | [tool-bilibili-downloader](skills/tool-bilibili-downloader/SKILL.md) | B站视频音频提取与下载 (基于 yutto) |
 | [remotion-best-practices](skills/remotion-best-practices/SKILL.md) | Remotion 视频创建最佳实践参考指南 |
+| [ui-ux-pro-max](skills/ui-ux-pro-max/SKILL.md) | UI/UX 设计系统 (50+ 风格, 97色板, 57字体, Python CLI) |
+| [color-theory-palette-harmony-expert](skills/color-theory-palette-harmony-expert/SKILL.md) | 颜色理论与调色板和谐 (OKLCH, LAB/LCH, EMD) |
+| [framer-motion-best-practices](skills/framer-motion-best-practices/SKILL.md) | Framer Motion 性能优化 (42条规则) |
 
 ---
 
@@ -33,6 +36,9 @@ ln -s ~/skills/skills ~/.agent/skills
 | [remotion-guide](workflows/remotion-guide.md) | Remotion 视频开发参考与查询 |
 | [download-bilibili-audio](workflows/download-bilibili-audio.md) | B站音频下载至 MacWhisper 待转录目录 |
 | [import-local-to-notebooklm](workflows/import-local-to-notebooklm.md) | 导入本地文件 (PDF/Office) 到 NotebookLM |
+| [ui-ux-pro-max](workflows/ui-ux-pro-max.md) | UI/UX 设计系统生成与查询 |
+| [color-theory](workflows/color-theory.md) | 颜色理论与调色板和谐设计 |
+| [framer-motion](workflows/framer-motion.md) | Framer Motion 动画最佳实践 |
 
 ---
 
