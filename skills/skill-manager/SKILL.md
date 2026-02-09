@@ -27,6 +27,40 @@ metadata:
 
 ---
 
+## 📁 目录约定 (Directory Convention)
+
+| 目录 | 用途 | 说明 |
+|-----|------|------|
+| **`.agent/skills/`** | Antigravity 专用 | ✅ 正确的 Antigravity 约定，项目级别 |
+| **`~/.agent/skills/`** | Antigravity 全局 | 个人偏好，跨项目共享 |
+| **`.agents/skills/`** | Universal 共享 | `npx skills add` 创建，多 agent 共享 (Codex, Gemini CLI 等) |
+
+> **注意**: `npx skills add` 会在 `.agents/` 创建实际文件，并自动 symlink 到 `.agent/skills/`。
+
+---
+
+## 🔍 从社区安装 Skill (Install from Community)
+
+使用 `npx skills` 搜索并安装社区技能：
+
+```bash
+# 搜索技能
+npx -y skills search "<关键词>"
+
+# 安装技能 (-y 自动选择 agent)
+npx -y skills add <owner/repo@skill-name> -y
+
+# 示例
+npx -y skills search "framer-motion"
+npx -y skills add pproenca/dot-skills@framer-motion-best-practices -y
+```
+
+安装后需要手动：
+
+1. 复制到 `~/skills/skills/` 以便 GitHub 同步
+2. 创建对应的 workflow 文件
+3. 更新 `~/skills/README.md` 索引
+
 ## 🚀 核心工作流：创建并发布 Skill (Create & Publish)
 
 这是一个**完整的、原子的**操作流程。请务必**按顺序执行完所有步骤**，不要中途停止。
